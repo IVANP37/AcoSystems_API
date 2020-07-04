@@ -1,0 +1,12 @@
+/target
+/build
+#/yarn.lock
+#/package-lock.json
+**/node_modules
+*.log
+*.swp
+/.scannerwork
+/src/profiles
+/src/device
+Api.log
+.env

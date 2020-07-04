@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>API-FR </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="landing">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">API FACE-RECOGNITION</a></h1>
+
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<h2>API FACE-RECOGNITION</h2>
+				<p>API <br />
+					FOR ALCOSYSTEMS PROJECT <br />
+				</p>
+
+			</div>
+			<a href="#one" class="more scrolly">READ MORE</a>
+		</section>
+
+		<article id="main">
+
+			<section class="wrapper style5">
+				<div class="inner">
+
+					<section id="one">
+						<h4>API overview</h4>
+						<p>Information about the routes that will be invoked to perform facial recognition.</p>
+						<hr />
+						<header>
+							<h4>You must request a token to perform all operations</h4>
+							<p>Route to request the Http-Post token to <blockquote> <b>"../faceRecognition/signin"</b> </blockquote>  Send in the json body with username and
+								password.<br /></p>
+						</header>
+						<p>
+						<h5>Example</h5>
+						<pre><code>
+{
+   "username": "ivan",
+   "password": "admin237"
+}
+
+Headers:
+   [{"Content-Type", "value": "application / json"}]
+-----------------------	
+
+Responce 200 ok:
+ {
+    "auth": true,
+    "token": "eyJhbGc.."
+}
+							</code></pre>
+						</p>
+						<header>							
+								<h4>You must request a faceRecognition to perform all operations</h4>
+								<p>Route to request the Http-Post faceRecognition  <blockquote> <b> "../faceRecognition" </b> </blockquote> Send in the body a Json with the information of the images that you want to analyze.<br /></p>
+							</header>
+							<p>
+							<h5>Example</h5>
+							<pre><code>
+	{ 
+	"referencePhotos": [{
+           "url": "URL_IMAGE1"},
+           {"url": "URL_IMAGE2"
+    }],
+       "samplePhoto":"URL_IMAGE_PROFILE",
+       "sampleInfo": {
+            "id": 1,
+            "date": "19.10.2019 20:23:15",
+            "colorCode": "green"
+             }
+	 }
+	
+      Headers:
+        [{"Content-Type", "value": "application / json"}]
+		[{Authorization","value":"bearer hash of token"}]
+		-----------------------
+
+      Responce 200 ok:
+       {
+          "sampleID": "1",
+      	  "result": "FAILED or PASSED"
+      	}
+								</code></pre>
+							</p>
+							<header>
+					</section>
+
+					<!-- CTA -->
+					
+
+					<!-- Footer -->
+					<footer id="footer">
+
+						<ul class="copyright">
+							<li>&copy;ALCOSYSTEMS</li>
+							<li>DISEÑO: <a href="#">Alcosystems Team Backend</a></li>
+						</ul>
+					</footer>
+
+				</div>
+
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/skel.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+				<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
